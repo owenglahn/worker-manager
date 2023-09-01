@@ -1,4 +1,5 @@
-import Worker from "../models/Worker";
+import Worker from "../models/Worker.js";
+import asyncHandler from "express-async-handler";
 
 // @Desc Provides an array of all workers in the database
 // @Route /workers
@@ -9,3 +10,8 @@ export const getWorkers = asyncHandler(async (_, response) => {
     workers,
   });
 });
+
+// @Desc
+// @Route /workers
+// @Method POST
+export const addWorker = asyncHandler(async (request, response) => {});

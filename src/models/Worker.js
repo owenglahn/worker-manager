@@ -21,7 +21,7 @@ const WorkerSchema = new Schema({
     required: true,
   },
   wage: {
-    type: { int, PayPeriod },
+    type: { amount: Number, period: String },
     required: true,
   },
 });

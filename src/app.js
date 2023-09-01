@@ -1,8 +1,9 @@
-import { getWorkers } from "./controllers/workerController";
+import { getWorkers } from "./controllers/workerController.js";
+import express from "express";
+import { config } from "dotenv";
+import connectDB from "./config/db.config.js";
 
-const express = require("express");
-const { default: connectDB } = require("./config/db.config");
-require("dotenv").config();
+config();
 
 const app = express();
 app.use(express.json());
