@@ -1,4 +1,4 @@
-import { getWorkers } from "./controllers/workerController.js";
+import { addWorker, getWorkers } from "./controllers/workerController.js";
 import express from "express";
 import { config } from "dotenv";
 import connectDB from "./config/db.config.js";
@@ -21,3 +21,4 @@ app.get("/status", (_, response) => {
   response.send(status);
 });
 app.get("/workers", getWorkers);
+app.post("/workers", addWorker);

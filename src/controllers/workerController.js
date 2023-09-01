@@ -14,4 +14,11 @@ export const getWorkers = asyncHandler(async (_, response) => {
 // @Desc
 // @Route /workers
 // @Method POST
-export const addWorker = asyncHandler(async (request, response) => {});
+export const addWorker = asyncHandler(async (request, response) => {
+  const { name, position, wage } = request.body;
+  const worker = new Worker({ name, position, wage });
+  await worker.save();
+  response.status(201).json({
+    worker,
+  });
+});
